@@ -8,6 +8,7 @@ import { PostModule } from './post/post.module';
 import { ReadPostModule } from './read-post/read-post.module';
 import { NotificationModule } from './notification/notification.module';
 import { ScheduleModule } from '@nestjs/schedule';
+import { SheetModule } from './sheet/sheet.module';
 
 @Module({
   imports: [
@@ -15,8 +16,8 @@ import { ScheduleModule } from '@nestjs/schedule';
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost',
-      port: 5432,
-      username: 'sarun',
+      port: 5433,
+      username: 'postgres',
       password: 'password',
       database: 'dreemz',
       synchronize: true,
@@ -27,6 +28,7 @@ import { ScheduleModule } from '@nestjs/schedule';
     PostModule,
     ReadPostModule,
     NotificationModule,
+    SheetModule,
   ],
   controllers: [AppController],
   providers: [AppService],
